@@ -57,6 +57,11 @@ public class People{
         super();
         this.n = n;
     }
+    public People(Color c)
+    {
+        super();
+        this.c = c;
+    }
     //초기화 
     public People(Color c,Nationality n, Beverage b,Cigar cgr,Pet p)
     {

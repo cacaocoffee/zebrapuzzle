@@ -23,18 +23,35 @@ public class Peoples {
     }
     public Peoples(People[] p)
     {
-        for(int i=0;i<5;i++)
+        for(int i =0; i<p.length;i++)
         {
-            this.p[i].b= p[i].b;
-            this.p[i].c= p[i].c;
-            this.p[i].cgr= p[i].cgr;
-            this.p[i].n= p[i].n;
-            this.p[i].p= p[i].p;
-    
+            this.p[i]=new People();
+        }
+        //현재 값 Peoples에 넣기
+        for(int i =0; i<p.length;i++)
+        {
+            this.p[i].clone(p[i]);
         }
         leftPeople=null;
         rightPeople=null;
         root=this;
+        not=true;
+    }
+    //부모 연결.
+    public Peoples(Peoples peo)
+    {
+        for(int i =0; i<p.length;i++)
+        {
+            this.p[i]=new People();
+        }
+        //현재 값 Peoples에 넣기
+        for(int i =0; i<p.length;i++)
+        {
+            this.p[i].clone(peo.p[i]);
+        }
+        leftPeople=null;
+        rightPeople=null;
+        root=peo;
         not=true;
     }
     public Peoples(Peoples left, Peoples right, Peoples root)
